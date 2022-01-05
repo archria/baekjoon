@@ -8,7 +8,7 @@ int GCD( int a, int b){
 }
 
 bool isPrime(int n){
-    for(int i = 1; i <= sqrt(n); i++){
+    for(int i = 1; i <= n/2; i++){
         if(GCD(n,i) != 1)
             return false;
     }
@@ -31,12 +31,12 @@ int main(){
         cout<<"-1";
         return 0;
     }
-    else{
-        for(int i = min+1; min <= n; i++){
+    else if(min < n){
+        for(int i = min+1; i <= n; i++){
             if(isPrime(i) == true)
                 ans += i;
         }
     }
-    cout<<min<<endl<<ans;
+    cout<<ans<<endl<<min;
     return 0;
 }
