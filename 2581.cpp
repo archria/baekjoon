@@ -18,6 +18,7 @@ bool isPrime(int n){
 int main(){
     int m,n;
     cin>>m;
+    if(m == 1) m++;
     cin>>n;
     int min = -1, ans = 0;
     for(int i = m ; i <= n ; i++){

@@ -15,6 +15,7 @@ int main(){
     while(true){
         int n;
         cin>>n;
+        if(n == 0 ) break;
         int ans = 0;
         for(int i = n+1 ; i <= 2*n ; i++){
             if(isTimeNumber[i] == false)
