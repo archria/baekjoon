@@ -1,37 +1,45 @@
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
-//오름차순을 방해하는 요소들을 찾아서 그것만 지워버리면 해결된다
+struct Tower{
+    int A;
+    int B;
+};
+
+bool ATowerSort(Tower front, Tower back){
+    if(front.A < back.A)
+        return true;
+    return false;
+}
 
 int main(){
     int N;
     cin>>N;
-    N += 1;
-    int *A = new int[N];
-    int *B = new int[N];
-    int ans = 0;
-    for(int i = 1; i < N ; i++){
-        A[i] = 0;
+    Tower *towers = new Tower[N+1];
+    for(int i = 0; i < N ; i++){
+        cin>>towers[i].A>>towers[i].B;
     }
-    for(int i = 1; i < N ; i++){
-        int a,b;
-        cin>>a>>b;
-        A[a] = b;
-        B[b] = a;
-    }
-    int temp = -1;
-    for(int i = 1 ; i < N ; i++){
-        if(A[i] != 0){
-            if(A[i] > temp){
-                temp = A[i];
-            }
-            else{
-                temp = 
+    
+    sort(towers, towers+N, ATowerSort); // A 타워 기준으로 오름차순 정렬
+
+    int *length = new int[N+1];
+    for(int k = 0 ; k < N ; k++){
+        length[k] = 1;
+        for(int i = 0; i < k ; i++){
+            if(towers[i].B < towers[k].B){
+                length[k] = max(length[k],length[i]+1);
             }
         }
     }
-    cout<<ans;
+    int ans = 0;
+    for(int i = 0; i < N ; i++){
+        if(length[i] > ans)
+            ans = length[i];
+    }  
+    
+    cout<<N-ans;
 
     return 0;
 }

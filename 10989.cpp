@@ -1,9 +1,11 @@
 #include <iostream>
-#include <algorithm>
 
 using namespace std;
 
 int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
     int n;
     cin>>n;
     int nums[10001] = {0};
@@ -23,7 +25,8 @@ int main(){
 
 
 //메모리 초과뜨는 방법
-/*int main(){
+/*#include <algorithm>
+int main(){
     int n;
     cin>>n;
     int *nums = new int[n];
