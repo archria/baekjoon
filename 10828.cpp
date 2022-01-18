@@ -17,7 +17,12 @@ int main(){
             myStack.push(b);
         }
         else if(temp == "top"){
-            cout<<myStack.top()<<"\n";
+            if(myStack.empty() == true){
+                cout<<"-1\n";
+            }
+            else{
+                cout<<myStack.top()<<"\n";
+            }
         }
         else if(temp == "size"){
             cout<<myStack.size()<<"\n";
