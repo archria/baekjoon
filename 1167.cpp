@@ -48,8 +48,11 @@ int main(){
     }
     visited[1] = true;
     DFSLine(1,0);
-    //cout<<"farpoint : "<<farPoint<<endl;
+    //cout<<"farpoint : "<<farPoint<<endl;  
     visited[1] = false;
+    for(int i = 0; i <= v ; i++){
+        visited[i] = false;
+    }
     visited[farPoint] = true;
     DFSLine(farPoint,0);
 
