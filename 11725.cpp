@@ -22,7 +22,8 @@ int main(){
         int nowNode = bfsQueue.front();
         bfsQueue.pop();
         for(int i = 0; i < nodes[nowNode].size() ; i++){
-            if(tops[ nowNode ] == nodes[nowNode][i] ) continue; // 현재 노드의 부모가 만약 지금 탐색하는 노드라면?
+            if(tops[ nowNode ] == nodes[nowNode][i] ) continue; // 현재 노드에서 뻗어나가는 간선중 부모 노드를 발견한다면? skip 
+            // 그렇지 않다면 bfs에 추가
             tops[ nodes[nowNode][i] ] = nowNode;
             bfsQueue.push(nodes[nowNode][i]);
         }       
