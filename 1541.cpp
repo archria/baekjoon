@@ -8,43 +8,25 @@ bool minusState = false;
 int main(){
     string temp;
     cin>>temp;
-    string num;
-    int ans;
-    for(int i = 0; i < temp.length() ; i++){
-        if(temp[i] >= '0' && temp[i] <= '9'){
+    string num = "";
+    int ans = 0;
+    for(int i = 0; i <= temp.length() ; i++){
+        if(temp[i] == '-' || temp[i] == '+' || i == temp.length()){
+            if(minusState){
+                ans -= stoi(num);
+                num = "";
+            }
+            else{
+                ans += stoi(num);
+                num = "";
+            }
+        }
+        else{
             num += temp[i];
         }
-        else if(temp[i] == '-'){
-            int a = stoi(num);
-            num = "";
-            if(minusState == true){
-                ans -= a;
-            }
-            else{
-                ans += a;
-            }
-            minusState = true;
-            
-        }
-        else if(temp[i] == '+'){
-            int a = stoi(num);
-            num = "";
-            if(minusState == true){
-                ans -= a;
-            }
-            else{
-                ans += a;
-            }
-        }
-        if(i == temp.length() - 1){
-            int a = stoi(num);
-            if(minusState == true){
-                ans -= a;
-            }
-            else{
-                ans += a;
-            }
 
+        if(temp[i] == '-'){
+            minusState = true;
         }
 
     }
