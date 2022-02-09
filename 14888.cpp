@@ -2,10 +2,13 @@
 #include <vector>
 using namespace std;
 
-int 
+int min = 1000000000, max = -10000000000;
+int backtrack(int cnt){
+    
+}
 
 int main(){
-    int min = 0, max = 0;
+
 
     int n;
     cin>>n;
@@ -17,7 +20,7 @@ int main(){
     for(int i = 0; i < 4 ; i++){
         cin>>ops[i];
     }
-
+    
 
     return 0;
 }
