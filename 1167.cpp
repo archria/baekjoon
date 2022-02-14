@@ -26,7 +26,6 @@ void DFSLine(int startingPoint, int dist){
     if(longest < dist){
         longest = dist;
     }
-
 }
 
 int main(){
