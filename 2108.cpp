@@ -20,6 +20,8 @@ int main(){
     int tmp = 0;
 
     double mean = sum / n;
+    mean = round(mean);
+    if(mean == -0) mean = 0;
     cout<<round(mean)<<"\n";
 
     for(int i = 0; i < 8001; i++){
