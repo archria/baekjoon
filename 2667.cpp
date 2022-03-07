@@ -15,7 +15,7 @@ struct coor{
 vector<int> ans;
 
 int checkAPT(int i, int j){
-    int apt;
+    int apt = 0;
     queue<coor> tmp;
     coor origin;
     origin.i = i;
@@ -25,7 +25,7 @@ int checkAPT(int i, int j){
     while(tmp.empty() == false){
         coor nowcoor;
         nowcoor = tmp.front();
-        tmp.pop(); ,
+        tmp.pop();
         apt += 1;
         coor left,right,up,down;
         // 위 아래 왼쪽 오른쪽 검사해서 유효한경우 큐에 추가해줌
