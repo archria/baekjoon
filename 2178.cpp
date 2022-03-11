@@ -10,7 +10,7 @@ queue<pair<int,int>> primary;
 queue<pair<int,int>> secondary;
 
 int bfs();
-void fillqueue();
+int fillqueue();
 
 int bfs(){
     step += 1;
@@ -41,14 +41,14 @@ int bfs(){
             secondary.push(right);
         }                
     }
-    fillqueue();
+    return fillqueue();
 }
-void fillqueue(){
+int fillqueue(){
     while(!secondary.empty()){
         primary.push(secondary.front());
         secondary.pop();
     }
-    bfs();
+    return bfs();
 }
 
 
