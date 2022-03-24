@@ -9,7 +9,7 @@ int main(){
     notsosu[1] = true;
     for(int i = 2; i <=2000; i++){
         if(notsosu[i] == false){
-            for(int j = 2; j < 4000000/i ; j++){
+            for(int j = 2; j <= 4000000/i ; j++){
                 notsosu[i*j] = true;
             }
         }
@@ -25,7 +25,7 @@ int main(){
     int first = 0, last = 0,ans = 0;
     int sum = sosu[0];
     bool hit = false;
-    while(first < last){
+    while(first <= last){
         if(n == sum){
             ans += 1;
             sum -= sosu[first];
