@@ -4,12 +4,12 @@
 
 using namespace std;
 
-int k,n;
-int wires[10001];
-int ans;
+long long k,n;
+long long wires[10001];
+int ans = 1;
 
 bool isPossible(int len){
-    int cuts = 0;
+    long long cuts = 0;
     for(int i = 0; i < k ; i++){
         cuts += wires[i]/len;
     }
@@ -22,7 +22,7 @@ int main(){
         cin>>wires[i];
     }
     sort(wires,wires+k);
-    int first = 1,mid,last = wires[k-1];
+    long long first = 1,mid,last = wires[k-1];
     while(true){
         mid = (first + last)/2;
         if(first > last){
