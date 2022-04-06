@@ -15,8 +15,7 @@ long long solve(long long a, long long b, long long m){
 int main(){
     long long a,b,c;
     cin>>a>>b>>c;
-    
-    cout<<a;
+    cout<<solve(a,b,c);
 
     return 0;
 }
