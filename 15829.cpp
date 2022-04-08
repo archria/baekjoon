@@ -18,7 +18,7 @@ int main(){
     cin>>temp;
     long long ans = 0;
     for(int i = 0; i < n ; i++){
-        int pownum = 1;
+        long long pownum = 1;
         for(int j = 1; j <= i ; j++){
             pownum *= 31;
             if(pownum > 1234567891){
