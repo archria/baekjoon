@@ -36,6 +36,10 @@ public:
 
 int main(){
     myChildClass suv = myChildClass();
+    myFuncClass car = myFuncClass();
+    
+    car.fuel_check();
+
     suv.gas_station(6);
     suv.fuel_check();
     suv.go();
