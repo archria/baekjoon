@@ -19,6 +19,9 @@ int main(){
         dist[i] = 99999999;
     }
 
+    priority_queue<pair<int,int>> pq;
+    pq.push({0,K});
+
         
     
     return 0;
