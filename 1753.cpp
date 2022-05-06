@@ -25,10 +25,35 @@ int main(){
     // 간선이 없으면 pq에 입력되지 않음 == 있는곳만 알아냄
     dist[K] = 0;
     while(!pq.empty()){
-        int dest = pq.top().first;
+        int dest = -pq.top().first;
         int current = pq.top().second;
-    }
+        pq.pop();
+        if(dist[current] < dest){
+            continue;
+        }
+        for(int i = 0; i < vertex[current].size() ; i++){
+            // 출발점의 다음 노드
+            int next = vertex[current][i].second;
 
+            int dest1 = dest + vertex[current][i].first;
+
+            if(dist[next] > dest1){
+                dist[next] = dest1;
+
+                pq.push({-dest1,next});
+            }
+
+        }
+
+    }
+    
+
+    for(int i = 1; i <= V ; i++){
+        if(dist[i] == 99999999)
+            cout<<"INF"<<"\n";
+        else
+            cout<<dist[i]<<"\n";
+    }
     
             
     
